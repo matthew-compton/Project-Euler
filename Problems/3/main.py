@@ -22,7 +22,7 @@
 #  
 #  
 
-import prime
+import math, prime
 
 # The problem we're working on
 problem = "3"
@@ -49,17 +49,17 @@ def getPrimeFactors(num):
 # Finds the largest prime factor of a number
 def largestPrimeFactor(num):
 	global solution
-	for i in reversed(xrange(num)):
+	top = int(math.ceil(math.sqrt(num)))
+	for i in range(2, top+1):
 		if (num % i == 0):
 			if (prime.isPrime(i) == True):
 				solution = i
-				break
 
 # Solve the problem
 def solve():
 	#solution = largestPrimeFactor(13195)
 	#print getPrimeFactors(13195)
-	#solution = largestPrimeFactor(600851475143)
+	solution = largestPrimeFactor(600851475143)
 	#print getPrimeFactors(600851475143)
 
 # Main function that just runs the solver
